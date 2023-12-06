@@ -1,0 +1,864 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RPicoBoy Lib: RPicoBoy.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">RPicoBoy Lib
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">RPicoBoy.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_r_pico_boy_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef RPicoBoy_h</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define RPicoBoy_h</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;Wire.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;Adafruit_GFX.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;Adafruit_SSD1306.h&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a4f3ddbb46b279ff77ff9fdf2bb407365">   18</a></span><span class="preprocessor">#define PICO_LED_PIN 25</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#ab61d0981ed42df9e18211b273d22cfcd">   20</a></span><span class="preprocessor">#define BUZZER_PIN   15</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#ab9824ab080c30006c1baaa0dd7e863c5">   23</a></span><span class="preprocessor">#define LED_RED_PIN   26</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a0539be032702009fb24beec89c6fa0c0">   25</a></span><span class="preprocessor">#define LED_GREEN_PIN 22</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a5aec9d3b503fb1a30a21b16c7be86cff">   27</a></span><span class="preprocessor">#define LED_BLUE_PIN  21</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#ad0667700f38503d05ed5292ab92a7045">   29</a></span><span class="preprocessor">#define LED_ANODE_PIN 20</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a957be9f36cfd145ce1d6683a1300a175">   32</a></span><span class="preprocessor">#define BUTTON_A_PIN     28</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a266b9963d55c6c7b0e1cf1d0bdf93e6b">   34</a></span><span class="preprocessor">#define BUTTON_B_PIN     27</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#acda7867453dc4bd8d91710fbe4ea55a8">   36</a></span><span class="preprocessor">#define BUTTON_UP_PIN    17</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a6ef7dd3503756afca45c6cff5af0c3fd">   38</a></span><span class="preprocessor">#define BUTTON_LEFT_PIN  16</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a17d3069ff357c35a5826ecfc832096ca">   40</a></span><span class="preprocessor">#define BUTTON_RIGHT_PIN 19</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#aab3c5b6a2db906b3e358658733802750">   42</a></span><span class="preprocessor">#define BUTTON_DOWN_PIN  18</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a5bc57b97f72c8accc2816a8c5f84853b">   45</a></span><span class="preprocessor">#define EEPROM_SDA_PIN 2</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a15c997cbc5555dd8b71ad5d6ab5b6bab">   47</a></span><span class="preprocessor">#define EEPROM_SCL_PIN 3</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#aaa6cf79c8db30749fdc1022ee5f673e5">   49</a></span><span class="preprocessor">#define EEPROM_ADDRESS 0x50</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a1427524cdce50f5001fb6cc32d90ac9b">   51</a></span><span class="preprocessor">#define MAX_EEADDRESS 32766</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a526d580d324bce60a3e964066fae77e3">   54</a></span><span class="preprocessor">#define SDA_PIN 4</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a06c967e78bcedcee909a70764f879433">   56</a></span><span class="preprocessor">#define SCL_PIN 5</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a2cd109632a6dcccaa80b43561b1ab700">   59</a></span><span class="preprocessor">#define SCREEN_WIDTH 128</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a6974d08a74da681b3957b2fead2608b8">   61</a></span><span class="preprocessor">#define SCREEN_HEIGHT 64</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a619e07239fb3b9b14d40646ab41d5b4f">   63</a></span><span class="preprocessor">#define OLED_RESET    -1</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a6536388fb8c0510ed634dad6694cfa62">   66</a></span><span class="preprocessor">#define LED_MAX      255</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a439277832d2729315a5e4dbf64feec57">   68</a></span><span class="preprocessor">#define LUX_MAX      155</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#afa43c3a8af6cdc271ec334f8fcde1d98">   70</a></span><span class="preprocessor">#define RED_VOLTAGE  2.1</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a20483c831b401ff3271716495ac1d792">   72</a></span><span class="preprocessor">#define PICO_VOLTAGE 3.3</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#afb7c5b0b82831d22a29823a42e751a7d">   75</a></span><span class="preprocessor">#define TEXT_W_MODE  0</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#aa5f2225954a63820fd4decdd96aa5084">   77</a></span><span class="preprocessor">#define TEXT_BW_MODE 1</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#ad87de2be84c6249b3c1378a76ed7ac91">   80</a></span><span class="preprocessor">#define BTN_A     0</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a162d4b53c8ff2e6e76e206ccff1980b3">   82</a></span><span class="preprocessor">#define BTN_B     1</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#ae55225024bd160dd59985cb17eb5a2ed">   84</a></span><span class="preprocessor">#define BTN_UP    2</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#aeb8b29caaae1a7515c8bd9473e6eefb1">   86</a></span><span class="preprocessor">#define BTN_RIGHT 3</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a7881c76074b0ea36507f46b36840f54b">   88</a></span><span class="preprocessor">#define BTN_LEFT  4</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a58e7099c1e6ba27a4215652f7cf08fb9">   90</a></span><span class="preprocessor">#define BTN_DOWN  5</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a229f4f107e986afe9e09b430c6b86060">   92</a></span><span class="preprocessor">#define BTN_STATE 6</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#accfc50415a9a8f8732a6912889c3fa11">   94</a></span><span class="preprocessor">#define BTN_MAX   7</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a51fd7aef1b2778f797a724b443851ff7">   96</a></span><span class="preprocessor">#define VAL_DATA_MAX 50</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="_r_pico_boy_8h.html#a871d8fb9f861b3afe187aae730285b6f">   99</a></span>Adafruit_SSD1306 <a class="code hl_function" href="_r_pico_boy_8h.html#a871d8fb9f861b3afe187aae730285b6f">oled_obj</a>(<a class="code hl_define" href="_r_pico_boy_8h.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a>, <a class="code hl_define" href="_r_pico_boy_8h.html#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a>, &amp;Wire, <a class="code hl_define" href="_r_pico_boy_8h.html#a619e07239fb3b9b14d40646ab41d5b4f">OLED_RESET</a>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html">  106</a></span><span class="keyword">class </span><a class="code hl_class" href="class_r_pico_boy.html">RPicoBoy</a> {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_function" href="class_r_pico_boy.html#a20007bac8590c2b8c70bbe0872c9a611">RPicoBoy</a>();</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a888fec53da2931b5b06e024920731fa5">init</a>(<span class="keywordtype">int</span> fps, <span class="keywordtype">int</span> one_sound_delay);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a287c4dbe7e096007378efbf568e86eed">setFpsDelay</a>(<span class="keywordtype">int</span> fps);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a7fc01770170de4be19c85cd8fefc2ef8">setOneSoundDelay</a>(<span class="keywordtype">int</span> one_sound_delay);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a9ccd05e4decef86344456f1bd610277e">startFps</a>();</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#aab70143e33d405d9e99b5d6423b7051b">getFpsDelay</a>(<span class="keywordtype">int</span> *fps, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *delay_time);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a08aa5c64430e267dd161ea6265245348">getSoundDelay</a>(<span class="keywordtype">int</span> *sound_delay);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#afbcbd5b7f225eca997e8449d0f502c19">fpsDelay</a>();</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a1c18ff4d7d4e09a90013748222af24c1">oneSoundDelay</a>();</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a701af7cee87dd2bd95b8b486a9749ac0">setMenuSelect</a>(<span class="keywordtype">int</span> number);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_r_pico_boy.html#a7b938678e45cade2010926118f5abead">getMenuSelect</a>();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_pico_boy.html#a8d922eb27d8b7530cd2d6dae9de2642b">isChangedMenuSelect</a>();</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="comment">// void setVariableData(unsigned int adress, byte data);</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="comment">// byte getVariableData(unsigned int adress);</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="comment">// void clearVariableData();</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="comment">// OLEDの関数</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#ac0308539ec839f45be5bd3349ddf0c81">oledSetup</a>();</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a5d88fdb4a0f3378c17b4e7a2d861d940">setDrawColor</a>(uint16_t color);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a9e32b69fc1a7a1da875359aa72072b7e">setTextSize</a>(uint8_t size);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#afce089371c9ccd2c0b204e978b0921f1">setTextColor</a>(<span class="keywordtype">int</span> mode);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a1805feeb1295667c0c673dc2876f812c">setCursor</a>(int16_t x, int16_t y);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a7d2797661b06cc5d5ca963a25a9c53eb">drawPixel</a>(int16_t x, int16_t y);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a3557043818b98c8890a1b6506b167b70">dotInversion</a>(int16_t x, int16_t y);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a40083ae2fe5f6e0450090bcf205c3839">drawImage64bitBin</a>(int16_t x, int16_t y, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h, <span class="keywordtype">int</span> s, <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *array, <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *mArray);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#ad89ed1c6927fd46c310fddb55ca6c5e6">drawImage64bitBinExpansion</a>(int16_t x, int16_t y, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h, <span class="keywordtype">int</span> s, <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *array, <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *mArray, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> exp_rate);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a9b2b10f23a18c6ab063ea924048fa863">drawImage64bitBinExpansionConst</a>(int16_t x, int16_t y, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h, <span class="keywordtype">int</span> s, <span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *array, <span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *mArray, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> exp_rate);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a88421af0ccfc92ec19d79baef4d440b6">drawPixelWithMask</a>(int16_t x, int16_t y, <span class="keywordtype">char</span> bin_c, <span class="keywordtype">char</span> mask_c);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="comment">// void drawArrayImage(int16_t x, int16_t y, int w, int h, bool *array);</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a6b85b2ba7e8f6610d3fdf3f0b54763e2">drawArrayImage90Rot</a>(int16_t x, int16_t y, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h, <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *array);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a3ea3b269c3eae4e2059365cef0689910">drawArrayImage90RotConst</a>(int16_t x, int16_t y, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h, <span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *array);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a7ddd3ccbd928544d707efd06e1cfb38b">drawLine</a>(int16_t start_x, int16_t start_y, int16_t end_x, int16_t end_y);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#ae3dd7ab7a7c648de8b1618bab315115e">fillRect</a>(int16_t start_x, int16_t start_y, int16_t end_x, int16_t end_y);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#ac3845a5d34c91986f4b343daf44bdc3b">print</a>(String s);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a718a2d33f85d086abb4cc7c512fad200">println</a>(String s);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a5934cb2953e1424a07b87ab107bc1ba7">clearDisplay</a>();</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a9b89c4115f39c27a04f59804c08407ba">display</a>();</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="comment">// フルカラーLEDの関数</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a74313a4424974330c8526e19b27cccaf">ledSetup</a>();</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a853b6a1ead9974886520be71b6847eae">ledOn</a>(<span class="keywordtype">int</span> r, <span class="keywordtype">int</span> g, <span class="keywordtype">int</span> b, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a7690524b8b070ebcb2c33127056edef7">ledOff</a>();</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="comment">// ボタンの関数</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a2aefe800664cbd3188dc3f237d0a7fb0">buttonSetup</a>();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a0135e753a93106920d8ebc170ae895a6">getButtons</a>(<span class="keywordtype">bool</span> *buttonArray);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a40d6543a1174ca6d1ef2ddef5ce9a373">resetButton</a>();</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#adf025e9248ce516ade0b187ed149595e">updateButton</a>();</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_pico_boy.html#a5a48f35378bf76e9b4e73cad802ad850">getButton</a>(<span class="keywordtype">int</span> btn_number);</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_pico_boy.html#af42b7f63e4b7bc8f6c547a9db63a2108">isCrossAllButton</a>();</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="comment">// ブザーの関数</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a41c7b9a652c0a8e3c73980848bf8342c">buzzerSetup</a>();</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a6336fd57e7dc00f411daf88480ff6108">buzzerCall</a>(<span class="keywordtype">int</span> freq);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a8a36d7dd86c284201b7982cbe5b6af67">buzzerCallDelay</a>(<span class="keywordtype">int</span> freq, <span class="keywordtype">int</span> delay_time);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="comment">// EEPROMの関数</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a39f93ff1b0bdcca11c1ba5aa1c73d21b">writeEEPROM</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> eeaddress, <span class="keywordtype">byte</span> data);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordtype">byte</span> <a class="code hl_function" href="class_r_pico_boy.html#a60fdc118800a8c54238794f9acfd4a4b">readEEPROM</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> eeaddress);</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">  169</a></span>    Adafruit_SSD1306 *<a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a>;   </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#afbea67461471e8587eea739c6d19d513">  170</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_r_pico_boy.html#afbea67461471e8587eea739c6d19d513">_menu_select</a>;          </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a2ea496f6d7535f8fe2eed09701b275bd">  171</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_r_pico_boy.html#a2ea496f6d7535f8fe2eed09701b275bd">_old_menu_select</a>;      </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a46baf35cb6ba2f660eb47224205dcb7f">  172</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_r_pico_boy.html#a46baf35cb6ba2f660eb47224205dcb7f">_fps</a>;                  </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a68e784f8c5c8c0361027eb0c3f8d3bce">  173</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code hl_variable" href="class_r_pico_boy.html#a68e784f8c5c8c0361027eb0c3f8d3bce">_old_micros</a>; </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a6beab6e9fe577807bfb5b4a4897c4e28">  174</a></span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="class_r_pico_boy.html#a6beab6e9fe577807bfb5b4a4897c4e28">_delay_time</a>;  </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a2d27c4aa3fc671dd833b9c9854006f42">  175</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_r_pico_boy.html#a2d27c4aa3fc671dd833b9c9854006f42">_one_sound_delay</a>;      </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a49b6e567e8fd9c782e32c3bba449d9fe">  176</a></span>    uint16_t <a class="code hl_variable" href="class_r_pico_boy.html#a49b6e567e8fd9c782e32c3bba449d9fe">_draw_color</a>;      </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a75741452321875c4b27ee612c3a12abb">  177</a></span>    uint8_t <a class="code hl_variable" href="class_r_pico_boy.html#a75741452321875c4b27ee612c3a12abb">_text_size</a>;        </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a6114b59ee55a477b79e91d368efaf94c">  178</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_r_pico_boy.html#a6114b59ee55a477b79e91d368efaf94c">_r_pin</a>;                </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a255077dc9bbd1ee843e90dda3f279318">  179</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_r_pico_boy.html#a255077dc9bbd1ee843e90dda3f279318">_g_pin</a>;                </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a96fe8f4c324abe02d715e69230b89b36">  180</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_r_pico_boy.html#a96fe8f4c324abe02d715e69230b89b36">_b_pin</a>;                </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a937780be29a7fbc98aae686072893c54">  181</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_r_pico_boy.html#a937780be29a7fbc98aae686072893c54">_anode_pin</a>;            </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#abfb52d23478480336c26d4217301c2ae">  182</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_r_pico_boy.html#abfb52d23478480336c26d4217301c2ae">_buzzer_pin</a>;           </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#ad9cf2981a03f6ad5e10cab34c7b87581">  183</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_r_pico_boy.html#ad9cf2981a03f6ad5e10cab34c7b87581">_buttons</a>[<a class="code hl_define" href="_r_pico_boy_8h.html#accfc50415a9a8f8732a6912889c3fa11">BTN_MAX</a>] = {<span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>}; </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a425dcd281487b113a19bf2e03e830561">  184</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_r_pico_boy.html#a425dcd281487b113a19bf2e03e830561">_old_buttons</a>[<a class="code hl_define" href="_r_pico_boy_8h.html#accfc50415a9a8f8732a6912889c3fa11">BTN_MAX</a>] = {<span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">false</span>}; </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    <span class="comment">// byte _variable_data[VAL_DATA_MAX] = {}; /**&lt; 任意のデータ入力範囲 */</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>};</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a20007bac8590c2b8c70bbe0872c9a611">  193</a></span><a class="code hl_function" href="class_r_pico_boy.html#a20007bac8590c2b8c70bbe0872c9a611">RPicoBoy::RPicoBoy</a>() {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a> = &amp;<a class="code hl_function" href="_r_pico_boy_8h.html#a871d8fb9f861b3afe187aae730285b6f">oled_obj</a>;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  <a class="code hl_variable" href="class_r_pico_boy.html#afbea67461471e8587eea739c6d19d513">_menu_select</a> = 0;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a2ea496f6d7535f8fe2eed09701b275bd">_old_menu_select</a> = 0;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a68e784f8c5c8c0361027eb0c3f8d3bce">_old_micros</a> = micros();</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a46baf35cb6ba2f660eb47224205dcb7f">_fps</a> = 100;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a6beab6e9fe577807bfb5b4a4897c4e28">_delay_time</a> = 10000;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a2d27c4aa3fc671dd833b9c9854006f42">_one_sound_delay</a> = 150;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a49b6e567e8fd9c782e32c3bba449d9fe">_draw_color</a> = WHITE;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a75741452321875c4b27ee612c3a12abb">_text_size</a> = 1;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a6114b59ee55a477b79e91d368efaf94c">_r_pin</a> = 0;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a255077dc9bbd1ee843e90dda3f279318">_g_pin</a> = 0;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a96fe8f4c324abe02d715e69230b89b36">_b_pin</a> = 0;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a937780be29a7fbc98aae686072893c54">_anode_pin</a> = 0;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <a class="code hl_variable" href="class_r_pico_boy.html#abfb52d23478480336c26d4217301c2ae">_buzzer_pin</a> = 0;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>}</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a888fec53da2931b5b06e024920731fa5">  219</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a888fec53da2931b5b06e024920731fa5">RPicoBoy::init</a>(<span class="keywordtype">int</span> fps, <span class="keywordtype">int</span> one_sound_delay) {</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  <a class="code hl_function" href="class_r_pico_boy.html#ac0308539ec839f45be5bd3349ddf0c81">oledSetup</a>();</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  <a class="code hl_function" href="class_r_pico_boy.html#a74313a4424974330c8526e19b27cccaf">ledSetup</a>();</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  <a class="code hl_function" href="class_r_pico_boy.html#a2aefe800664cbd3188dc3f237d0a7fb0">buttonSetup</a>();</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <a class="code hl_function" href="class_r_pico_boy.html#a41c7b9a652c0a8e3c73980848bf8342c">buzzerSetup</a>();</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  <span class="comment">// EEPROMの準備</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  Wire1.setSDA(<a class="code hl_define" href="_r_pico_boy_8h.html#a5bc57b97f72c8accc2816a8c5f84853b">EEPROM_SDA_PIN</a>);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>  Wire1.setSCL(<a class="code hl_define" href="_r_pico_boy_8h.html#a15c997cbc5555dd8b71ad5d6ab5b6bab">EEPROM_SCL_PIN</a>);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  Wire1.begin();</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <a class="code hl_function" href="class_r_pico_boy.html#a287c4dbe7e096007378efbf568e86eed">setFpsDelay</a>(fps);</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a2d27c4aa3fc671dd833b9c9854006f42">_one_sound_delay</a> = one_sound_delay;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>}</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a287c4dbe7e096007378efbf568e86eed">  241</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a287c4dbe7e096007378efbf568e86eed">RPicoBoy::setFpsDelay</a>(<span class="keywordtype">int</span> fps) {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  <span class="keywordflow">if</span> (fps &lt;= 0) {</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <a class="code hl_variable" href="class_r_pico_boy.html#a46baf35cb6ba2f660eb47224205dcb7f">_fps</a> = 0;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <a class="code hl_variable" href="class_r_pico_boy.html#a6beab6e9fe577807bfb5b4a4897c4e28">_delay_time</a> = 0;</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <a class="code hl_variable" href="class_r_pico_boy.html#a46baf35cb6ba2f660eb47224205dcb7f">_fps</a> = fps;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <a class="code hl_variable" href="class_r_pico_boy.html#a6beab6e9fe577807bfb5b4a4897c4e28">_delay_time</a> = (<span class="keywordtype">unsigned</span> int)1000000/fps; <span class="comment">// microseconds</span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  }</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>}</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a7fc01770170de4be19c85cd8fefc2ef8">  258</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a7fc01770170de4be19c85cd8fefc2ef8">RPicoBoy::setOneSoundDelay</a>(<span class="keywordtype">int</span> one_sound_delay) {</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a2d27c4aa3fc671dd833b9c9854006f42">_one_sound_delay</a> = one_sound_delay;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>}</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a9ccd05e4decef86344456f1bd610277e">  267</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a9ccd05e4decef86344456f1bd610277e">RPicoBoy::startFps</a>() {</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a68e784f8c5c8c0361027eb0c3f8d3bce">_old_micros</a> = micros();</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>}</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#aab70143e33d405d9e99b5d6423b7051b">  279</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#aab70143e33d405d9e99b5d6423b7051b">RPicoBoy::getFpsDelay</a>(<span class="keywordtype">int</span> *fps, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *delay_time) {</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  *fps = <a class="code hl_variable" href="class_r_pico_boy.html#a46baf35cb6ba2f660eb47224205dcb7f">_fps</a>;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  *delay_time = <a class="code hl_variable" href="class_r_pico_boy.html#a6beab6e9fe577807bfb5b4a4897c4e28">_delay_time</a>;</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>}</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a08aa5c64430e267dd161ea6265245348">  291</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a08aa5c64430e267dd161ea6265245348">RPicoBoy::getSoundDelay</a>(<span class="keywordtype">int</span> *sound_delay) {</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>  *sound_delay = <a class="code hl_variable" href="class_r_pico_boy.html#a2d27c4aa3fc671dd833b9c9854006f42">_one_sound_delay</a>;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>}</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#afbcbd5b7f225eca997e8449d0f502c19">  300</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#afbcbd5b7f225eca997e8449d0f502c19">RPicoBoy::fpsDelay</a>() {</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> new_time = micros();</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>  <span class="keywordflow">if</span> (new_time &gt; <a class="code hl_variable" href="class_r_pico_boy.html#a68e784f8c5c8c0361027eb0c3f8d3bce">_old_micros</a>) {</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> diff_time = new_time - <a class="code hl_variable" href="class_r_pico_boy.html#a68e784f8c5c8c0361027eb0c3f8d3bce">_old_micros</a>;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_pico_boy.html#a6beab6e9fe577807bfb5b4a4897c4e28">_delay_time</a> &gt; diff_time) {</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> wait_time = <a class="code hl_variable" href="class_r_pico_boy.html#a6beab6e9fe577807bfb5b4a4897c4e28">_delay_time</a> - diff_time;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>      delayMicroseconds(wait_time);</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    }</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    <span class="comment">// 計算上おかしい場合は単純に1フレーム分待つ</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    delayMicroseconds(<a class="code hl_variable" href="class_r_pico_boy.html#a6beab6e9fe577807bfb5b4a4897c4e28">_delay_time</a>);</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>  }</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>}</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a1c18ff4d7d4e09a90013748222af24c1">  319</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a1c18ff4d7d4e09a90013748222af24c1">RPicoBoy::oneSoundDelay</a>() {</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>  delay(<a class="code hl_variable" href="class_r_pico_boy.html#a2d27c4aa3fc671dd833b9c9854006f42">_one_sound_delay</a>);</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>}</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a701af7cee87dd2bd95b8b486a9749ac0">  331</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a701af7cee87dd2bd95b8b486a9749ac0">RPicoBoy::setMenuSelect</a>(<span class="keywordtype">int</span> number) {</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a2ea496f6d7535f8fe2eed09701b275bd">_old_menu_select</a> = <a class="code hl_variable" href="class_r_pico_boy.html#afbea67461471e8587eea739c6d19d513">_menu_select</a>;</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>  <a class="code hl_variable" href="class_r_pico_boy.html#afbea67461471e8587eea739c6d19d513">_menu_select</a> = number;</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>}</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a7b938678e45cade2010926118f5abead">  343</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="class_r_pico_boy.html#a7b938678e45cade2010926118f5abead">RPicoBoy::getMenuSelect</a>() {</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_pico_boy.html#afbea67461471e8587eea739c6d19d513">_menu_select</a>;</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>}</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span> </div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a8d922eb27d8b7530cd2d6dae9de2642b">  354</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_pico_boy.html#a8d922eb27d8b7530cd2d6dae9de2642b">RPicoBoy::isChangedMenuSelect</a>() {</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_pico_boy.html#a2ea496f6d7535f8fe2eed09701b275bd">_old_menu_select</a> != <a class="code hl_variable" href="class_r_pico_boy.html#afbea67461471e8587eea739c6d19d513">_menu_select</a>) {</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>  }</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>}</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span> </div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span><span class="comment">// /**</span></div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span><span class="comment">//  * 任意のデータを格納する関数</span></div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span><span class="comment">//  *</span></div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span><span class="comment">//  * RPicoBoyのオブジェクトが保持する任意のデータを持つ配列にデータを格納する。</span></div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span><span class="comment">//  *</span></div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span><span class="comment">//  * @param[in] adress 番号(0～VAL_DATA_MAX-1の値)</span></div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span><span class="comment">//  * @param[in] data 書き込むデータ</span></div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span><span class="comment">//  */</span></div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span><span class="comment">// void RPicoBoy::setVariableData(unsigned int adress, byte data) {</span></div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span><span class="comment">//   // 最大番地以上の場合は何もしない</span></div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span><span class="comment">//   if (adress &gt;= VAL_DATA_MAX) { return; }</span></div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span><span class="comment">//   _variable_data[adress] = data;</span></div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span><span class="comment">// }</span></div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span> </div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span><span class="comment">// /**</span></div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span><span class="comment">//  * 任意のデータを取得する関数</span></div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span><span class="comment">//  *</span></div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span><span class="comment">//  * RPicoBoyのオブジェクトが保持する任意のデータを持つ配列のデータを取得する</span></div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span><span class="comment">//  *</span></div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span><span class="comment">//  * @return byte データ（番地の範囲外の場合は0xFFを返す）</span></div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span><span class="comment">//  */</span></div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span><span class="comment">// byte RPicoBoy::getVariableData(unsigned int adress) {</span></div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span><span class="comment">//   byte rdata = 0xFF;</span></div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span> </div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span><span class="comment">//   // 最大番地以上の場合はデフォルト値を返す</span></div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span><span class="comment">//   if (adress &gt;= VAL_DATA_MAX) { return rdata; }</span></div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span><span class="comment">//   return _variable_data[adress];</span></div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span><span class="comment">// }</span></div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span> </div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span><span class="comment">// /**</span></div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span><span class="comment">//  * 任意データの配列をクリアする関数</span></div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span><span class="comment">//  *</span></div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span><span class="comment">//  * RPicoBoyのオブジェクトが保持する任意のデータを持つ配列のデータをすべてクリアする</span></div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span><span class="comment">//  */</span></div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span><span class="comment">// void clearVariableData() {</span></div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span><span class="comment">//   _variable_data[VAL_DATA_MAX] = {};</span></div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span><span class="comment">// }</span></div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span> </div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#ac0308539ec839f45be5bd3349ddf0c81">  405</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#ac0308539ec839f45be5bd3349ddf0c81">RPicoBoy::oledSetup</a>() {</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>  <span class="comment">// OLEDの初期化処理</span></div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>  Wire.setSDA(<a class="code hl_define" href="_r_pico_boy_8h.html#a526d580d324bce60a3e964066fae77e3">SDA_PIN</a>);</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>  Wire.setSCL(<a class="code hl_define" href="_r_pico_boy_8h.html#a06c967e78bcedcee909a70764f879433">SCL_PIN</a>);</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>  Wire.begin();</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span> </div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>  <span class="comment">// OLED初期設定</span></div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>  <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a>-&gt;begin(SSD1306_SWITCHCAPVCC, 0x3C)) {</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>    <span class="comment">// エラーなら無限ループ</span></div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>      Serial.println(<span class="stringliteral">&quot;SSD1306:0 allocation failed&quot;</span>);</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>      delay(3000);</div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>    };</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  }</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span> </div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>  <span class="comment">// 文字と色の設定</span></div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>  <a class="code hl_function" href="class_r_pico_boy.html#a9e32b69fc1a7a1da875359aa72072b7e">setTextSize</a>(1);</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>  <a class="code hl_function" href="class_r_pico_boy.html#afce089371c9ccd2c0b204e978b0921f1">setTextColor</a>(<a class="code hl_define" href="_r_pico_boy_8h.html#afb7c5b0b82831d22a29823a42e751a7d">TEXT_W_MODE</a>);</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>  <a class="code hl_function" href="class_r_pico_boy.html#a5d88fdb4a0f3378c17b4e7a2d861d940">setDrawColor</a>(WHITE);</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>}</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span> </div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a5d88fdb4a0f3378c17b4e7a2d861d940">  433</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a5d88fdb4a0f3378c17b4e7a2d861d940">RPicoBoy::setDrawColor</a>(uint16_t color) {</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a49b6e567e8fd9c782e32c3bba449d9fe">_draw_color</a> = color;</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>}</div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span> </div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a9e32b69fc1a7a1da875359aa72072b7e">  444</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a9e32b69fc1a7a1da875359aa72072b7e">RPicoBoy::setTextSize</a>(uint8_t size) {</div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a75741452321875c4b27ee612c3a12abb">_text_size</a> = size;</div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a>-&gt;setTextSize(size);</div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>}</div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span> </div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#afce089371c9ccd2c0b204e978b0921f1">  456</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#afce089371c9ccd2c0b204e978b0921f1">RPicoBoy::setTextColor</a>(<span class="keywordtype">int</span> mode) {</div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>  <span class="keywordflow">if</span> (mode == <a class="code hl_define" href="_r_pico_boy_8h.html#afb7c5b0b82831d22a29823a42e751a7d">TEXT_W_MODE</a>) {</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>    <a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a>-&gt;setTextColor(WHITE);</div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>    <a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a>-&gt;setTextColor(BLACK, WHITE);</div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>  }</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>}</div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span> </div>
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a1805feeb1295667c0c673dc2876f812c">  472</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a1805feeb1295667c0c673dc2876f812c">RPicoBoy::setCursor</a>(int16_t x, int16_t y) {</div>
+<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a>-&gt;setCursor(x, y);</div>
+<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>}</div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span> </div>
+<div class="line"><a id="l00485" name="l00485"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a7d2797661b06cc5d5ca963a25a9c53eb">  485</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a7d2797661b06cc5d5ca963a25a9c53eb">RPicoBoy::drawPixel</a>(int16_t x, int16_t y) {</div>
+<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a>-&gt;drawPixel(x, y, <a class="code hl_variable" href="class_r_pico_boy.html#a49b6e567e8fd9c782e32c3bba449d9fe">_draw_color</a>);</div>
+<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>}</div>
+<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span> </div>
+<div class="line"><a id="l00497" name="l00497"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a3557043818b98c8890a1b6506b167b70">  497</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a3557043818b98c8890a1b6506b167b70">RPicoBoy::dotInversion</a>(int16_t x, int16_t y) {</div>
+<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>  <span class="keywordtype">bool</span> dot = <a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a>-&gt;getPixel(x, y);</div>
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a>-&gt;drawPixel(x, y, !dot);</div>
+<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span>}</div>
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span> </div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a40083ae2fe5f6e0450090bcf205c3839">  515</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a40083ae2fe5f6e0450090bcf205c3839">RPicoBoy::drawImage64bitBin</a>(int16_t x, int16_t y, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h, <span class="keywordtype">int</span> s, <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *array, <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *mArray) {</div>
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>  <span class="keywordtype">int</span> result = 0;</div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span> </div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; h; i++) {</div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>    <span class="comment">// 16進数の1行分を2進数で取得</span></div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>    <span class="keywordtype">char</span> bin_c[w];</div>
+<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = (w-1); j &gt;=0; j--) {</div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>      result = (array[i] &gt;&gt; j) &amp; 1;</div>
+<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>      bin_c[(w-1)-j] = <span class="charliteral">&#39;0&#39;</span>+result;</div>
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>    }</div>
+<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>  </div>
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>    <span class="comment">// マスクがあればそっちも2進数で取得</span></div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>    <span class="keywordtype">char</span> bin_c_m[w];</div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>    <span class="keywordflow">if</span> (mArray != NULL) {</div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = (w-1); j &gt;=0; j--) {</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>        result = (mArray[i] &gt;&gt; j) &amp; 1;</div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>        bin_c_m[(w-1)-j] = <span class="charliteral">&#39;0&#39;</span>+result;</div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>      }</div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>    }</div>
+<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span> </div>
+<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>    <span class="comment">// 必要な分だけ表示</span></div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; s; k++) {</div>
+<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>      <span class="keywordflow">if</span> (mArray != NULL) {</div>
+<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>        <span class="comment">// マスクがある場合</span></div>
+<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>        <a class="code hl_function" href="class_r_pico_boy.html#a88421af0ccfc92ec19d79baef4d440b6">drawPixelWithMask</a>(x+k, y+i, bin_c[k], bin_c_m[k]);</div>
+<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>        <span class="comment">// マスクがない場合</span></div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>        <a class="code hl_function" href="class_r_pico_boy.html#a88421af0ccfc92ec19d79baef4d440b6">drawPixelWithMask</a>(x+k, y+i, bin_c[k], <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>      }</div>
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>    }</div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>  }</div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>}</div>
+<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span> </div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#ad89ed1c6927fd46c310fddb55ca6c5e6">  562</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#ad89ed1c6927fd46c310fddb55ca6c5e6">RPicoBoy::drawImage64bitBinExpansion</a>(int16_t x, int16_t y, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h, <span class="keywordtype">int</span> s, <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *array, <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *mArray, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> exp_rate) {</div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>  <span class="keywordtype">int</span> result = 0;</div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span> </div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; h; i++) {</div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>    <span class="comment">// 16進数の1行分を2進数で取得</span></div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>    <span class="keywordtype">char</span> bin_c[w];</div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = (w-1); j &gt;=0; j--) {</div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>      result = (array[i] &gt;&gt; j) &amp; 1;</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>      bin_c[(w-1)-j] = <span class="charliteral">&#39;0&#39;</span>+result;</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    }</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>  </div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>    <span class="comment">// マスクがあればそっちも2進数で取得</span></div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>    <span class="keywordtype">char</span> bin_c_m[w];</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>    <span class="keywordflow">if</span> (mArray != NULL) {</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = (w-1); j &gt;=0; j--) {</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>        result = (mArray[i] &gt;&gt; j) &amp; 1;</div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>        bin_c_m[(w-1)-j] = <span class="charliteral">&#39;0&#39;</span>+result;</div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>      }</div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>    }</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span> </div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>    <span class="comment">// 必要な分だけ表示</span></div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; s; k++) {</div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> l = 1; l &lt;= exp_rate; l++) {</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> m = 1; m &lt;= exp_rate; m++) {</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>          <span class="keywordflow">if</span> (mArray != NULL) {            </div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>            <a class="code hl_function" href="class_r_pico_boy.html#a88421af0ccfc92ec19d79baef4d440b6">drawPixelWithMask</a>(x+k*exp_rate+l, y+i*exp_rate+m, bin_c[k], bin_c_m[k]);</div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>          } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>            <a class="code hl_function" href="class_r_pico_boy.html#a88421af0ccfc92ec19d79baef4d440b6">drawPixelWithMask</a>(x+k*exp_rate+l, y+i*exp_rate+m, bin_c[k], <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>          }</div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>        }</div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>      }</div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>    }</div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>  </div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>  }</div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>}</div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span> </div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a9b2b10f23a18c6ab063ea924048fa863">  612</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a9b2b10f23a18c6ab063ea924048fa863">RPicoBoy::drawImage64bitBinExpansionConst</a>(int16_t x, int16_t y, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h, <span class="keywordtype">int</span> s, <span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *array, <span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *mArray, <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> exp_rate) {</div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>  <span class="keywordtype">int</span> result = 0;</div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span> </div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; h; i++) {</div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>    <span class="comment">// 16進数の1行分を2進数で取得</span></div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>    <span class="keywordtype">char</span> bin_c[w];</div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = (w-1); j &gt;=0; j--) {</div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>      result = (array[i] &gt;&gt; j) &amp; 1;</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>      bin_c[(w-1)-j] = <span class="charliteral">&#39;0&#39;</span>+result;</div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>    }</div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>  </div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>    <span class="comment">// マスクがあればそっちも2進数で取得</span></div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>    <span class="keywordtype">char</span> bin_c_m[w];</div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>    <span class="keywordflow">if</span> (mArray != NULL) {</div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = (w-1); j &gt;=0; j--) {</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>        result = (mArray[i] &gt;&gt; j) &amp; 1;</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>        bin_c_m[(w-1)-j] = <span class="charliteral">&#39;0&#39;</span>+result;</div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>      }</div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>    }</div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span> </div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>    <span class="comment">// 必要な分だけ表示</span></div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; s; k++) {</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> l = 1; l &lt;= exp_rate; l++) {</div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> m = 1; m &lt;= exp_rate; m++) {</div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>          <span class="keywordflow">if</span> (mArray != NULL) {            </div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>            <a class="code hl_function" href="class_r_pico_boy.html#a88421af0ccfc92ec19d79baef4d440b6">drawPixelWithMask</a>(x+k*exp_rate+l, y+i*exp_rate+m, bin_c[k], bin_c_m[k]);</div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>          } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>            <a class="code hl_function" href="class_r_pico_boy.html#a88421af0ccfc92ec19d79baef4d440b6">drawPixelWithMask</a>(x+k*exp_rate+l, y+i*exp_rate+m, bin_c[k], <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>          }</div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>        }</div>
+<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>      }</div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>    }</div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>  </div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>  }</div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>}</div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span> </div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a88421af0ccfc92ec19d79baef4d440b6">  658</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a88421af0ccfc92ec19d79baef4d440b6">RPicoBoy::drawPixelWithMask</a>(int16_t x, int16_t y, <span class="keywordtype">char</span> bin_c, <span class="keywordtype">char</span> mask_c) {</div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>  <span class="keywordtype">bool</span> pixel = <a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a>-&gt;getPixel(x, y);</div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>  <span class="keywordflow">if</span> (bin_c == <span class="charliteral">&#39;1&#39;</span>) {</div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>    <span class="comment">// ドットが立っているものについては普通にドットを打つ</span></div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>    <a class="code hl_function" href="class_r_pico_boy.html#a7d2797661b06cc5d5ca963a25a9c53eb">drawPixel</a>(x, y);</div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>  } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pixel) {</div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>    <span class="comment">// マスクの範囲外であれば</span></div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>    <span class="keywordflow">if</span> (mask_c == <span class="charliteral">&#39;0&#39;</span>) {</div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>      <a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a>-&gt;drawPixel(x, y, BLACK);</div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>    }</div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>  }</div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>}</div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span> </div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span><span class="comment">// 配列のイメージを表示する関数</span></div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span><span class="comment">// x, yは開始座標、wは横幅、hは縦幅、*arrayは0または1を持つ配列</span></div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span><span class="comment">// void RPicoBoy::drawArrayImage(int16_t x, int16_t y, int w, int h, bool *array) {</span></div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span><span class="comment">//   int max_num = w * h;</span></div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span><span class="comment">//   int h_num = -1;</span></div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span> </div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span><span class="comment">//   for (int i = 0; i &lt; max_num; i++) {</span></div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span><span class="comment">//     int w_num = i % w;</span></div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span><span class="comment">//     if (w_num == 0) { h_num++; }</span></div>
+<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span><span class="comment">//     _oled-&gt;drawPixel(x+w_num, y+h_num, array[i]);</span></div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span><span class="comment">//   }</span></div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span><span class="comment">// }</span></div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span> </div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a6b85b2ba7e8f6610d3fdf3f0b54763e2">  695</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a6b85b2ba7e8f6610d3fdf3f0b54763e2">RPicoBoy::drawArrayImage90Rot</a>(int16_t x, int16_t y, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h, <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *array) {</div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>  <span class="keywordtype">int</span> result = 0;</div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>  <span class="keywordtype">int</span> line_num = 0;</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span> </div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; w; i++) {</div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>    <span class="comment">// 16進数の1行分を2進数で取得</span></div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>    <span class="keywordtype">char</span> bin_c[h];</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = (h-1); j &gt;=0; j--) {</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>      result = (array[i] &gt;&gt; j) &amp; 1;</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>      bin_c[(h-1)-j] = <span class="charliteral">&#39;0&#39;</span>+result;</div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>    }</div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span> </div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>    <span class="comment">// Serial.println(bin_c);</span></div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span> </div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>    <span class="comment">// 必要な分だけ表示</span></div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; h; k++) {</div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>      <span class="keywordflow">if</span> (bin_c[k] == <span class="charliteral">&#39;1&#39;</span>) { <a class="code hl_function" href="class_r_pico_boy.html#a7d2797661b06cc5d5ca963a25a9c53eb">drawPixel</a>(x+line_num, y+k); };</div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>    }</div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span> </div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>    line_num++;</div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>  }</div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>}</div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span> </div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a3ea3b269c3eae4e2059365cef0689910">  729</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a3ea3b269c3eae4e2059365cef0689910">RPicoBoy::drawArrayImage90RotConst</a>(int16_t x, int16_t y, <span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h, <span class="keyword">const</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> *array) {</div>
+<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>  <span class="keywordtype">int</span> result = 0;</div>
+<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>  <span class="keywordtype">int</span> line_num = 0;</div>
+<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span> </div>
+<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; w; i++) {</div>
+<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>    <span class="comment">// 16進数の1行分を2進数で取得</span></div>
+<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>    <span class="keywordtype">char</span> bin_c[h];</div>
+<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = (h-1); j &gt;=0; j--) {</div>
+<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>      result = (array[i] &gt;&gt; j) &amp; 1;</div>
+<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>      bin_c[(h-1)-j] = <span class="charliteral">&#39;0&#39;</span>+result;</div>
+<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>    }</div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span> </div>
+<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>    <span class="comment">// Serial.println(bin_c);</span></div>
+<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span> </div>
+<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>    <span class="comment">// 必要な分だけ表示</span></div>
+<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; h; k++) {</div>
+<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>      <span class="keywordflow">if</span> (bin_c[k] == <span class="charliteral">&#39;1&#39;</span>) { <a class="code hl_function" href="class_r_pico_boy.html#a7d2797661b06cc5d5ca963a25a9c53eb">drawPixel</a>(x+line_num, y+k); };</div>
+<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>    }</div>
+<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span> </div>
+<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>    line_num++;</div>
+<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>  }</div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>}</div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span> </div>
+<div class="line"><a id="l00762" name="l00762"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a7ddd3ccbd928544d707efd06e1cfb38b">  762</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a7ddd3ccbd928544d707efd06e1cfb38b">RPicoBoy::drawLine</a>(int16_t start_x, int16_t start_y, int16_t end_x, int16_t end_y) {</div>
+<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a>-&gt;drawLine(start_y, start_x, end_y, end_x, <a class="code hl_variable" href="class_r_pico_boy.html#a49b6e567e8fd9c782e32c3bba449d9fe">_draw_color</a>);</div>
+<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>}</div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span> </div>
+<div class="line"><a id="l00776" name="l00776"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#ae3dd7ab7a7c648de8b1618bab315115e">  776</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#ae3dd7ab7a7c648de8b1618bab315115e">RPicoBoy::fillRect</a>(int16_t start_x, int16_t start_y, int16_t end_x, int16_t end_y) {</div>
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a>-&gt;fillRect(start_y, start_x, end_y, end_x, WHITE);</div>
+<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>}</div>
+<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span> </div>
+<div class="line"><a id="l00787" name="l00787"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#ac3845a5d34c91986f4b343daf44bdc3b">  787</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#ac3845a5d34c91986f4b343daf44bdc3b">RPicoBoy::print</a>(String s) {</div>
+<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a>-&gt;print(s);</div>
+<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>}</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span> </div>
+<div class="line"><a id="l00798" name="l00798"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a718a2d33f85d086abb4cc7c512fad200">  798</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a718a2d33f85d086abb4cc7c512fad200">RPicoBoy::println</a>(String s) {</div>
+<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a>-&gt;println(s);</div>
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>}</div>
+<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span> </div>
+<div class="line"><a id="l00807" name="l00807"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a5934cb2953e1424a07b87ab107bc1ba7">  807</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a5934cb2953e1424a07b87ab107bc1ba7">RPicoBoy::clearDisplay</a>() {</div>
+<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a>-&gt;clearDisplay();</div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>}</div>
+<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span> </div>
+<div class="line"><a id="l00817" name="l00817"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a9b89c4115f39c27a04f59804c08407ba">  817</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a9b89c4115f39c27a04f59804c08407ba">RPicoBoy::display</a>() {</div>
+<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">_oled</a>-&gt;display();</div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>}</div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span> </div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a74313a4424974330c8526e19b27cccaf">  827</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a74313a4424974330c8526e19b27cccaf">RPicoBoy::ledSetup</a>() {</div>
+<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>  <span class="comment">// ピン番号取得</span></div>
+<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a6114b59ee55a477b79e91d368efaf94c">_r_pin</a> = <a class="code hl_define" href="_r_pico_boy_8h.html#ab9824ab080c30006c1baaa0dd7e863c5">LED_RED_PIN</a>;</div>
+<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a255077dc9bbd1ee843e90dda3f279318">_g_pin</a> = <a class="code hl_define" href="_r_pico_boy_8h.html#a0539be032702009fb24beec89c6fa0c0">LED_GREEN_PIN</a>;</div>
+<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a96fe8f4c324abe02d715e69230b89b36">_b_pin</a> = <a class="code hl_define" href="_r_pico_boy_8h.html#a5aec9d3b503fb1a30a21b16c7be86cff">LED_BLUE_PIN</a>;</div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>  <a class="code hl_variable" href="class_r_pico_boy.html#a937780be29a7fbc98aae686072893c54">_anode_pin</a> = <a class="code hl_define" href="_r_pico_boy_8h.html#ad0667700f38503d05ed5292ab92a7045">LED_ANODE_PIN</a>;</div>
+<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span> </div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>  <span class="comment">// ピンの設定</span></div>
+<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>  pinMode(<a class="code hl_define" href="_r_pico_boy_8h.html#a4f3ddbb46b279ff77ff9fdf2bb407365">PICO_LED_PIN</a>, OUTPUT);</div>
+<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>  pinMode(<a class="code hl_variable" href="class_r_pico_boy.html#a6114b59ee55a477b79e91d368efaf94c">_r_pin</a>, OUTPUT);</div>
+<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>  pinMode(<a class="code hl_variable" href="class_r_pico_boy.html#a255077dc9bbd1ee843e90dda3f279318">_g_pin</a>, OUTPUT);</div>
+<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>  pinMode(<a class="code hl_variable" href="class_r_pico_boy.html#a96fe8f4c324abe02d715e69230b89b36">_b_pin</a>, OUTPUT);</div>
+<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>  pinMode(<a class="code hl_variable" href="class_r_pico_boy.html#a937780be29a7fbc98aae686072893c54">_anode_pin</a>, OUTPUT);</div>
+<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span> </div>
+<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>  <span class="comment">// picoのLEDを点灯させてフルカラーLEDを消灯</span></div>
+<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>  digitalWrite(<a class="code hl_define" href="_r_pico_boy_8h.html#a4f3ddbb46b279ff77ff9fdf2bb407365">PICO_LED_PIN</a>, HIGH);</div>
+<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>  <a class="code hl_function" href="class_r_pico_boy.html#a7690524b8b070ebcb2c33127056edef7">ledOff</a>();</div>
+<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>}</div>
+<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span> </div>
+<div class="line"><a id="l00856" name="l00856"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a853b6a1ead9974886520be71b6847eae">  856</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a853b6a1ead9974886520be71b6847eae">RPicoBoy::ledOn</a>(<span class="keywordtype">int</span> r, <span class="keywordtype">int</span> g, <span class="keywordtype">int</span> b, <span class="keywordtype">int</span> value) {</div>
+<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>  <span class="keywordtype">int</span> r_val = (r &gt;= <a class="code hl_define" href="_r_pico_boy_8h.html#a6536388fb8c0510ed634dad6694cfa62">LED_MAX</a>) ? <a class="code hl_define" href="_r_pico_boy_8h.html#a6536388fb8c0510ed634dad6694cfa62">LED_MAX</a> : r;</div>
+<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>  <span class="keywordtype">int</span> g_val = (g &gt;= <a class="code hl_define" href="_r_pico_boy_8h.html#a6536388fb8c0510ed634dad6694cfa62">LED_MAX</a>) ? <a class="code hl_define" href="_r_pico_boy_8h.html#a6536388fb8c0510ed634dad6694cfa62">LED_MAX</a> : g;</div>
+<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>  <span class="keywordtype">int</span> b_val = (b &gt;= <a class="code hl_define" href="_r_pico_boy_8h.html#a6536388fb8c0510ed634dad6694cfa62">LED_MAX</a>) ? <a class="code hl_define" href="_r_pico_boy_8h.html#a6536388fb8c0510ed634dad6694cfa62">LED_MAX</a> : b;</div>
+<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>  <span class="keywordtype">int</span> val   = (value &gt;= <a class="code hl_define" href="_r_pico_boy_8h.html#a439277832d2729315a5e4dbf64feec57">LUX_MAX</a>) ? <a class="code hl_define" href="_r_pico_boy_8h.html#a439277832d2729315a5e4dbf64feec57">LUX_MAX</a> : value;</div>
+<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span> </div>
+<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>  <span class="comment">// rのみ電圧が低いので計算で調整</span></div>
+<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>  r_val = r_val * <a class="code hl_define" href="_r_pico_boy_8h.html#afa43c3a8af6cdc271ec334f8fcde1d98">RED_VOLTAGE</a> / <a class="code hl_define" href="_r_pico_boy_8h.html#a20483c831b401ff3271716495ac1d792">PICO_VOLTAGE</a>;</div>
+<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span> </div>
+<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>  <span class="comment">// 値が逆なのでMAXの値から引く</span></div>
+<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>  r_val = <a class="code hl_define" href="_r_pico_boy_8h.html#a6536388fb8c0510ed634dad6694cfa62">LED_MAX</a> - r_val;</div>
+<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>  g_val = <a class="code hl_define" href="_r_pico_boy_8h.html#a6536388fb8c0510ed634dad6694cfa62">LED_MAX</a> - g_val;</div>
+<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>  b_val = <a class="code hl_define" href="_r_pico_boy_8h.html#a6536388fb8c0510ed634dad6694cfa62">LED_MAX</a> - b_val;</div>
+<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span> </div>
+<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>  <span class="comment">// 光量を調節して光らせる</span></div>
+<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>  <a class="code hl_function" href="class_r_pico_boy.html#a7690524b8b070ebcb2c33127056edef7">ledOff</a>();</div>
+<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>  analogWrite(<a class="code hl_variable" href="class_r_pico_boy.html#a937780be29a7fbc98aae686072893c54">_anode_pin</a>, val);</div>
+<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>  analogWrite(<a class="code hl_variable" href="class_r_pico_boy.html#a6114b59ee55a477b79e91d368efaf94c">_r_pin</a>, r_val);</div>
+<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>  analogWrite(<a class="code hl_variable" href="class_r_pico_boy.html#a255077dc9bbd1ee843e90dda3f279318">_g_pin</a>, g_val);</div>
+<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>  analogWrite(<a class="code hl_variable" href="class_r_pico_boy.html#a96fe8f4c324abe02d715e69230b89b36">_b_pin</a>, b_val);</div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>}</div>
+<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span> </div>
+<div class="line"><a id="l00883" name="l00883"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a7690524b8b070ebcb2c33127056edef7">  883</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a7690524b8b070ebcb2c33127056edef7">RPicoBoy::ledOff</a>() {</div>
+<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>  analogWrite(<a class="code hl_variable" href="class_r_pico_boy.html#a937780be29a7fbc98aae686072893c54">_anode_pin</a>, 0);</div>
+<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>  analogWrite(<a class="code hl_variable" href="class_r_pico_boy.html#a6114b59ee55a477b79e91d368efaf94c">_r_pin</a>, <a class="code hl_define" href="_r_pico_boy_8h.html#a6536388fb8c0510ed634dad6694cfa62">LED_MAX</a>);</div>
+<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>  analogWrite(<a class="code hl_variable" href="class_r_pico_boy.html#a255077dc9bbd1ee843e90dda3f279318">_g_pin</a>, <a class="code hl_define" href="_r_pico_boy_8h.html#a6536388fb8c0510ed634dad6694cfa62">LED_MAX</a>);</div>
+<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>  analogWrite(<a class="code hl_variable" href="class_r_pico_boy.html#a96fe8f4c324abe02d715e69230b89b36">_b_pin</a>, <a class="code hl_define" href="_r_pico_boy_8h.html#a6536388fb8c0510ed634dad6694cfa62">LED_MAX</a>);</div>
+<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>}</div>
+<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span> </div>
+<div class="line"><a id="l00895" name="l00895"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a2aefe800664cbd3188dc3f237d0a7fb0">  895</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a2aefe800664cbd3188dc3f237d0a7fb0">RPicoBoy::buttonSetup</a>() {</div>
+<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>  pinMode(<a class="code hl_define" href="_r_pico_boy_8h.html#a957be9f36cfd145ce1d6683a1300a175">BUTTON_A_PIN</a>, INPUT_PULLUP);</div>
+<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span>  pinMode(<a class="code hl_define" href="_r_pico_boy_8h.html#a266b9963d55c6c7b0e1cf1d0bdf93e6b">BUTTON_B_PIN</a>, INPUT_PULLUP);</div>
+<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span>  pinMode(<a class="code hl_define" href="_r_pico_boy_8h.html#acda7867453dc4bd8d91710fbe4ea55a8">BUTTON_UP_PIN</a>, INPUT_PULLUP);</div>
+<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span>  pinMode(<a class="code hl_define" href="_r_pico_boy_8h.html#a6ef7dd3503756afca45c6cff5af0c3fd">BUTTON_LEFT_PIN</a>, INPUT_PULLUP);</div>
+<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span>  pinMode(<a class="code hl_define" href="_r_pico_boy_8h.html#a17d3069ff357c35a5826ecfc832096ca">BUTTON_RIGHT_PIN</a>, INPUT_PULLUP);</div>
+<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>  pinMode(<a class="code hl_define" href="_r_pico_boy_8h.html#aab3c5b6a2db906b3e358658733802750">BUTTON_DOWN_PIN</a>, INPUT_PULLUP);</div>
+<div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>}</div>
+<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span> </div>
+<div class="line"><a id="l00911" name="l00911"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a0135e753a93106920d8ebc170ae895a6">  911</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a0135e753a93106920d8ebc170ae895a6">RPicoBoy::getButtons</a>(<span class="keywordtype">bool</span> *buttonArray) {</div>
+<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span>  <span class="keywordtype">bool</span> button_state = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span>  <span class="comment">// ボタン判定</span></div>
+<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span>  <span class="keywordflow">if</span> (digitalRead(<a class="code hl_define" href="_r_pico_boy_8h.html#a957be9f36cfd145ce1d6683a1300a175">BUTTON_A_PIN</a>) == 0) {</div>
+<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span>    buttonArray[<a class="code hl_define" href="_r_pico_boy_8h.html#ad87de2be84c6249b3c1378a76ed7ac91">BTN_A</a>] = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span>    button_state = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span>  }</div>
+<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span>  <span class="keywordflow">if</span> (digitalRead(<a class="code hl_define" href="_r_pico_boy_8h.html#a266b9963d55c6c7b0e1cf1d0bdf93e6b">BUTTON_B_PIN</a>) == 0) {</div>
+<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span>    buttonArray[<a class="code hl_define" href="_r_pico_boy_8h.html#a162d4b53c8ff2e6e76e206ccff1980b3">BTN_B</a>] = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span>    button_state = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span>  }</div>
+<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span>  <span class="keywordflow">if</span> (digitalRead(<a class="code hl_define" href="_r_pico_boy_8h.html#acda7867453dc4bd8d91710fbe4ea55a8">BUTTON_UP_PIN</a>) == 0) {</div>
+<div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span>    buttonArray[<a class="code hl_define" href="_r_pico_boy_8h.html#ae55225024bd160dd59985cb17eb5a2ed">BTN_UP</a>] = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span>    button_state = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>  }</div>
+<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>  <span class="keywordflow">if</span> (digitalRead(<a class="code hl_define" href="_r_pico_boy_8h.html#a17d3069ff357c35a5826ecfc832096ca">BUTTON_RIGHT_PIN</a>) == 0) {</div>
+<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span>    buttonArray[<a class="code hl_define" href="_r_pico_boy_8h.html#aeb8b29caaae1a7515c8bd9473e6eefb1">BTN_RIGHT</a>] = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span>    button_state = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>  }</div>
+<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>  <span class="keywordflow">if</span> (digitalRead(<a class="code hl_define" href="_r_pico_boy_8h.html#a6ef7dd3503756afca45c6cff5af0c3fd">BUTTON_LEFT_PIN</a>) == 0) {</div>
+<div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span>    buttonArray[<a class="code hl_define" href="_r_pico_boy_8h.html#a7881c76074b0ea36507f46b36840f54b">BTN_LEFT</a>] = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span>    button_state = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span>  }</div>
+<div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span>  <span class="keywordflow">if</span> (digitalRead(<a class="code hl_define" href="_r_pico_boy_8h.html#aab3c5b6a2db906b3e358658733802750">BUTTON_DOWN_PIN</a>) == 0) {</div>
+<div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span>    buttonArray[<a class="code hl_define" href="_r_pico_boy_8h.html#a58e7099c1e6ba27a4215652f7cf08fb9">BTN_DOWN</a>] = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span>    button_state = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span>  }</div>
+<div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span>  buttonArray[<a class="code hl_define" href="_r_pico_boy_8h.html#a229f4f107e986afe9e09b430c6b86060">BTN_STATE</a>] = button_state;</div>
+<div class="line"><a id="l00939" name="l00939"></a><span class="lineno">  939</span>}</div>
+<div class="line"><a id="l00940" name="l00940"></a><span class="lineno">  940</span> </div>
+<div class="line"><a id="l00946" name="l00946"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a40d6543a1174ca6d1ef2ddef5ce9a373">  946</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a40d6543a1174ca6d1ef2ddef5ce9a373">RPicoBoy::resetButton</a>() {</div>
+<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_define" href="_r_pico_boy_8h.html#accfc50415a9a8f8732a6912889c3fa11">BTN_MAX</a>; i++) {</div>
+<div class="line"><a id="l00948" name="l00948"></a><span class="lineno">  948</span>    <a class="code hl_variable" href="class_r_pico_boy.html#ad9cf2981a03f6ad5e10cab34c7b87581">_buttons</a>[i] = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span>  }</div>
+<div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span>}</div>
+<div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span> </div>
+<div class="line"><a id="l00957" name="l00957"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#adf025e9248ce516ade0b187ed149595e">  957</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#adf025e9248ce516ade0b187ed149595e">RPicoBoy::updateButton</a>() {</div>
+<div class="line"><a id="l00958" name="l00958"></a><span class="lineno">  958</span>  <a class="code hl_function" href="class_r_pico_boy.html#a40d6543a1174ca6d1ef2ddef5ce9a373">resetButton</a>();</div>
+<div class="line"><a id="l00959" name="l00959"></a><span class="lineno">  959</span>  <a class="code hl_function" href="class_r_pico_boy.html#a0135e753a93106920d8ebc170ae895a6">getButtons</a>(<a class="code hl_variable" href="class_r_pico_boy.html#ad9cf2981a03f6ad5e10cab34c7b87581">_buttons</a>);</div>
+<div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span>}</div>
+<div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span> </div>
+<div class="line"><a id="l00970" name="l00970"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a5a48f35378bf76e9b4e73cad802ad850">  970</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_pico_boy.html#a5a48f35378bf76e9b4e73cad802ad850">RPicoBoy::getButton</a>(<span class="keywordtype">int</span> btn_number) {</div>
+<div class="line"><a id="l00971" name="l00971"></a><span class="lineno">  971</span>  <span class="keywordflow">if</span> (btn_number  &lt; 0 || <a class="code hl_define" href="_r_pico_boy_8h.html#accfc50415a9a8f8732a6912889c3fa11">BTN_MAX</a> &lt;= btn_number) {</div>
+<div class="line"><a id="l00972" name="l00972"></a><span class="lineno">  972</span>    <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a id="l00973" name="l00973"></a><span class="lineno">  973</span>  }</div>
+<div class="line"><a id="l00974" name="l00974"></a><span class="lineno">  974</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="class_r_pico_boy.html#ad9cf2981a03f6ad5e10cab34c7b87581">_buttons</a>[btn_number];</div>
+<div class="line"><a id="l00975" name="l00975"></a><span class="lineno">  975</span>}</div>
+<div class="line"><a id="l00976" name="l00976"></a><span class="lineno">  976</span> </div>
+<div class="line"><a id="l00984" name="l00984"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#af42b7f63e4b7bc8f6c547a9db63a2108">  984</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="class_r_pico_boy.html#af42b7f63e4b7bc8f6c547a9db63a2108">RPicoBoy::isCrossAllButton</a>() {</div>
+<div class="line"><a id="l00985" name="l00985"></a><span class="lineno">  985</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_r_pico_boy.html#ad9cf2981a03f6ad5e10cab34c7b87581">_buttons</a>[<a class="code hl_define" href="_r_pico_boy_8h.html#ae55225024bd160dd59985cb17eb5a2ed">BTN_UP</a>] &amp;&amp; <a class="code hl_variable" href="class_r_pico_boy.html#ad9cf2981a03f6ad5e10cab34c7b87581">_buttons</a>[<a class="code hl_define" href="_r_pico_boy_8h.html#a58e7099c1e6ba27a4215652f7cf08fb9">BTN_DOWN</a>] &amp;&amp; <a class="code hl_variable" href="class_r_pico_boy.html#ad9cf2981a03f6ad5e10cab34c7b87581">_buttons</a>[<a class="code hl_define" href="_r_pico_boy_8h.html#aeb8b29caaae1a7515c8bd9473e6eefb1">BTN_RIGHT</a>] &amp;&amp; <a class="code hl_variable" href="class_r_pico_boy.html#ad9cf2981a03f6ad5e10cab34c7b87581">_buttons</a>[<a class="code hl_define" href="_r_pico_boy_8h.html#a7881c76074b0ea36507f46b36840f54b">BTN_LEFT</a>]) {</div>
+<div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00987" name="l00987"></a><span class="lineno">  987</span>  }</div>
+<div class="line"><a id="l00988" name="l00988"></a><span class="lineno">  988</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00989" name="l00989"></a><span class="lineno">  989</span>}</div>
+<div class="line"><a id="l00990" name="l00990"></a><span class="lineno">  990</span> </div>
+<div class="line"><a id="l00996" name="l00996"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a41c7b9a652c0a8e3c73980848bf8342c">  996</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a41c7b9a652c0a8e3c73980848bf8342c">RPicoBoy::buzzerSetup</a>() {</div>
+<div class="line"><a id="l00997" name="l00997"></a><span class="lineno">  997</span>  <a class="code hl_variable" href="class_r_pico_boy.html#abfb52d23478480336c26d4217301c2ae">_buzzer_pin</a> = <a class="code hl_define" href="_r_pico_boy_8h.html#ab61d0981ed42df9e18211b273d22cfcd">BUZZER_PIN</a>;</div>
+<div class="line"><a id="l00998" name="l00998"></a><span class="lineno">  998</span>  pinMode(<a class="code hl_variable" href="class_r_pico_boy.html#abfb52d23478480336c26d4217301c2ae">_buzzer_pin</a>, OUTPUT);</div>
+<div class="line"><a id="l00999" name="l00999"></a><span class="lineno">  999</span>}</div>
+<div class="line"><a id="l01000" name="l01000"></a><span class="lineno"> 1000</span> </div>
+<div class="line"><a id="l01009" name="l01009"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a6336fd57e7dc00f411daf88480ff6108"> 1009</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a6336fd57e7dc00f411daf88480ff6108">RPicoBoy::buzzerCall</a>(<span class="keywordtype">int</span> freq) {</div>
+<div class="line"><a id="l01010" name="l01010"></a><span class="lineno"> 1010</span>  tone(<a class="code hl_variable" href="class_r_pico_boy.html#abfb52d23478480336c26d4217301c2ae">_buzzer_pin</a>, freq);</div>
+<div class="line"><a id="l01011" name="l01011"></a><span class="lineno"> 1011</span>  <a class="code hl_function" href="class_r_pico_boy.html#a1c18ff4d7d4e09a90013748222af24c1">oneSoundDelay</a>();</div>
+<div class="line"><a id="l01012" name="l01012"></a><span class="lineno"> 1012</span>  noTone(<a class="code hl_variable" href="class_r_pico_boy.html#abfb52d23478480336c26d4217301c2ae">_buzzer_pin</a>);</div>
+<div class="line"><a id="l01013" name="l01013"></a><span class="lineno"> 1013</span>}</div>
+<div class="line"><a id="l01014" name="l01014"></a><span class="lineno"> 1014</span> </div>
+<div class="line"><a id="l01023" name="l01023"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a8a36d7dd86c284201b7982cbe5b6af67"> 1023</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a8a36d7dd86c284201b7982cbe5b6af67">RPicoBoy::buzzerCallDelay</a>(<span class="keywordtype">int</span> freq, <span class="keywordtype">int</span> delay_time) {</div>
+<div class="line"><a id="l01024" name="l01024"></a><span class="lineno"> 1024</span>  tone(<a class="code hl_variable" href="class_r_pico_boy.html#abfb52d23478480336c26d4217301c2ae">_buzzer_pin</a>, freq);</div>
+<div class="line"><a id="l01025" name="l01025"></a><span class="lineno"> 1025</span>  delay(delay_time);</div>
+<div class="line"><a id="l01026" name="l01026"></a><span class="lineno"> 1026</span>  noTone(<a class="code hl_variable" href="class_r_pico_boy.html#abfb52d23478480336c26d4217301c2ae">_buzzer_pin</a>);</div>
+<div class="line"><a id="l01027" name="l01027"></a><span class="lineno"> 1027</span>}</div>
+<div class="line"><a id="l01028" name="l01028"></a><span class="lineno"> 1028</span> </div>
+<div class="line"><a id="l01037" name="l01037"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a39f93ff1b0bdcca11c1ba5aa1c73d21b"> 1037</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_r_pico_boy.html#a39f93ff1b0bdcca11c1ba5aa1c73d21b">RPicoBoy::writeEEPROM</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> eeaddress, <span class="keywordtype">byte</span> data) {</div>
+<div class="line"><a id="l01038" name="l01038"></a><span class="lineno"> 1038</span>  <span class="comment">// 最大番地より大きい場合は何もしない</span></div>
+<div class="line"><a id="l01039" name="l01039"></a><span class="lineno"> 1039</span>  <span class="keywordflow">if</span> (eeaddress &gt; <a class="code hl_define" href="_r_pico_boy_8h.html#a1427524cdce50f5001fb6cc32d90ac9b">MAX_EEADDRESS</a>) { <span class="keywordflow">return</span>; }</div>
+<div class="line"><a id="l01040" name="l01040"></a><span class="lineno"> 1040</span> </div>
+<div class="line"><a id="l01041" name="l01041"></a><span class="lineno"> 1041</span>  <span class="comment">// 番地を指定してデータ書き込み</span></div>
+<div class="line"><a id="l01042" name="l01042"></a><span class="lineno"> 1042</span>  Wire1.beginTransmission(<a class="code hl_define" href="_r_pico_boy_8h.html#aaa6cf79c8db30749fdc1022ee5f673e5">EEPROM_ADDRESS</a>);</div>
+<div class="line"><a id="l01043" name="l01043"></a><span class="lineno"> 1043</span>  Wire1.write((<span class="keywordtype">int</span>)(eeaddress &gt;&gt; 8));   <span class="comment">// 番地のHighByte</span></div>
+<div class="line"><a id="l01044" name="l01044"></a><span class="lineno"> 1044</span>  Wire1.write((<span class="keywordtype">int</span>)(eeaddress &amp; 0xFF)); <span class="comment">// 番地のLowByte</span></div>
+<div class="line"><a id="l01045" name="l01045"></a><span class="lineno"> 1045</span>  Wire1.write(data);</div>
+<div class="line"><a id="l01046" name="l01046"></a><span class="lineno"> 1046</span>  Wire1.endTransmission();</div>
+<div class="line"><a id="l01047" name="l01047"></a><span class="lineno"> 1047</span> </div>
+<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span>  delay(5);</div>
+<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span>}</div>
+<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span> </div>
+<div class="line"><a id="l01059" name="l01059"></a><span class="lineno"><a class="line" href="class_r_pico_boy.html#a60fdc118800a8c54238794f9acfd4a4b"> 1059</a></span><span class="keywordtype">byte</span> <a class="code hl_function" href="class_r_pico_boy.html#a60fdc118800a8c54238794f9acfd4a4b">RPicoBoy::readEEPROM</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> eeaddress) {</div>
+<div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span>  <span class="keywordtype">byte</span> rdata = 0xFF;</div>
+<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span> </div>
+<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span>  <span class="comment">// 番地指定</span></div>
+<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span>  Wire1.beginTransmission(<a class="code hl_define" href="_r_pico_boy_8h.html#aaa6cf79c8db30749fdc1022ee5f673e5">EEPROM_ADDRESS</a>);</div>
+<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>  Wire1.write((<span class="keywordtype">int</span>)(eeaddress &gt;&gt; 8));   <span class="comment">// 番地のHighByte</span></div>
+<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span>  Wire1.write((<span class="keywordtype">int</span>)(eeaddress &amp; 0xFF)); <span class="comment">// 番地のLowByte</span></div>
+<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>  Wire1.endTransmission();</div>
+<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span> </div>
+<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span>  <span class="comment">// データ取得</span></div>
+<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span>  Wire1.requestFrom(<a class="code hl_define" href="_r_pico_boy_8h.html#aaa6cf79c8db30749fdc1022ee5f673e5">EEPROM_ADDRESS</a>, 1); </div>
+<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>  <span class="keywordflow">if</span> (Wire1.available()) { rdata = Wire1.read(); }</div>
+<div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span>  <span class="keywordflow">return</span> rdata;</div>
+<div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span>}</div>
+<div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span> </div>
+<div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span><span class="preprocessor">#endif </span><span class="comment">// RPicoBoy_h</span></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a0539be032702009fb24beec89c6fa0c0"><div class="ttname"><a href="_r_pico_boy_8h.html#a0539be032702009fb24beec89c6fa0c0">LED_GREEN_PIN</a></div><div class="ttdeci">#define LED_GREEN_PIN</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:25</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a06c967e78bcedcee909a70764f879433"><div class="ttname"><a href="_r_pico_boy_8h.html#a06c967e78bcedcee909a70764f879433">SCL_PIN</a></div><div class="ttdeci">#define SCL_PIN</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:56</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a1427524cdce50f5001fb6cc32d90ac9b"><div class="ttname"><a href="_r_pico_boy_8h.html#a1427524cdce50f5001fb6cc32d90ac9b">MAX_EEADDRESS</a></div><div class="ttdeci">#define MAX_EEADDRESS</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:51</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a15c997cbc5555dd8b71ad5d6ab5b6bab"><div class="ttname"><a href="_r_pico_boy_8h.html#a15c997cbc5555dd8b71ad5d6ab5b6bab">EEPROM_SCL_PIN</a></div><div class="ttdeci">#define EEPROM_SCL_PIN</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:47</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a162d4b53c8ff2e6e76e206ccff1980b3"><div class="ttname"><a href="_r_pico_boy_8h.html#a162d4b53c8ff2e6e76e206ccff1980b3">BTN_B</a></div><div class="ttdeci">#define BTN_B</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:82</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a17d3069ff357c35a5826ecfc832096ca"><div class="ttname"><a href="_r_pico_boy_8h.html#a17d3069ff357c35a5826ecfc832096ca">BUTTON_RIGHT_PIN</a></div><div class="ttdeci">#define BUTTON_RIGHT_PIN</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:40</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a20483c831b401ff3271716495ac1d792"><div class="ttname"><a href="_r_pico_boy_8h.html#a20483c831b401ff3271716495ac1d792">PICO_VOLTAGE</a></div><div class="ttdeci">#define PICO_VOLTAGE</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:72</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a229f4f107e986afe9e09b430c6b86060"><div class="ttname"><a href="_r_pico_boy_8h.html#a229f4f107e986afe9e09b430c6b86060">BTN_STATE</a></div><div class="ttdeci">#define BTN_STATE</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:92</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a266b9963d55c6c7b0e1cf1d0bdf93e6b"><div class="ttname"><a href="_r_pico_boy_8h.html#a266b9963d55c6c7b0e1cf1d0bdf93e6b">BUTTON_B_PIN</a></div><div class="ttdeci">#define BUTTON_B_PIN</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:34</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a2cd109632a6dcccaa80b43561b1ab700"><div class="ttname"><a href="_r_pico_boy_8h.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a></div><div class="ttdeci">#define SCREEN_WIDTH</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:59</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a439277832d2729315a5e4dbf64feec57"><div class="ttname"><a href="_r_pico_boy_8h.html#a439277832d2729315a5e4dbf64feec57">LUX_MAX</a></div><div class="ttdeci">#define LUX_MAX</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:68</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a4f3ddbb46b279ff77ff9fdf2bb407365"><div class="ttname"><a href="_r_pico_boy_8h.html#a4f3ddbb46b279ff77ff9fdf2bb407365">PICO_LED_PIN</a></div><div class="ttdeci">#define PICO_LED_PIN</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:18</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a526d580d324bce60a3e964066fae77e3"><div class="ttname"><a href="_r_pico_boy_8h.html#a526d580d324bce60a3e964066fae77e3">SDA_PIN</a></div><div class="ttdeci">#define SDA_PIN</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:54</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a58e7099c1e6ba27a4215652f7cf08fb9"><div class="ttname"><a href="_r_pico_boy_8h.html#a58e7099c1e6ba27a4215652f7cf08fb9">BTN_DOWN</a></div><div class="ttdeci">#define BTN_DOWN</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:90</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a5aec9d3b503fb1a30a21b16c7be86cff"><div class="ttname"><a href="_r_pico_boy_8h.html#a5aec9d3b503fb1a30a21b16c7be86cff">LED_BLUE_PIN</a></div><div class="ttdeci">#define LED_BLUE_PIN</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:27</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a5bc57b97f72c8accc2816a8c5f84853b"><div class="ttname"><a href="_r_pico_boy_8h.html#a5bc57b97f72c8accc2816a8c5f84853b">EEPROM_SDA_PIN</a></div><div class="ttdeci">#define EEPROM_SDA_PIN</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:45</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a619e07239fb3b9b14d40646ab41d5b4f"><div class="ttname"><a href="_r_pico_boy_8h.html#a619e07239fb3b9b14d40646ab41d5b4f">OLED_RESET</a></div><div class="ttdeci">#define OLED_RESET</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:63</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a6536388fb8c0510ed634dad6694cfa62"><div class="ttname"><a href="_r_pico_boy_8h.html#a6536388fb8c0510ed634dad6694cfa62">LED_MAX</a></div><div class="ttdeci">#define LED_MAX</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:66</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a6974d08a74da681b3957b2fead2608b8"><div class="ttname"><a href="_r_pico_boy_8h.html#a6974d08a74da681b3957b2fead2608b8">SCREEN_HEIGHT</a></div><div class="ttdeci">#define SCREEN_HEIGHT</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:61</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a6ef7dd3503756afca45c6cff5af0c3fd"><div class="ttname"><a href="_r_pico_boy_8h.html#a6ef7dd3503756afca45c6cff5af0c3fd">BUTTON_LEFT_PIN</a></div><div class="ttdeci">#define BUTTON_LEFT_PIN</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:38</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a7881c76074b0ea36507f46b36840f54b"><div class="ttname"><a href="_r_pico_boy_8h.html#a7881c76074b0ea36507f46b36840f54b">BTN_LEFT</a></div><div class="ttdeci">#define BTN_LEFT</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:88</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a871d8fb9f861b3afe187aae730285b6f"><div class="ttname"><a href="_r_pico_boy_8h.html#a871d8fb9f861b3afe187aae730285b6f">oled_obj</a></div><div class="ttdeci">Adafruit_SSD1306 oled_obj(SCREEN_WIDTH, SCREEN_HEIGHT, &amp;Wire, OLED_RESET)</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_a957be9f36cfd145ce1d6683a1300a175"><div class="ttname"><a href="_r_pico_boy_8h.html#a957be9f36cfd145ce1d6683a1300a175">BUTTON_A_PIN</a></div><div class="ttdeci">#define BUTTON_A_PIN</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:32</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_aaa6cf79c8db30749fdc1022ee5f673e5"><div class="ttname"><a href="_r_pico_boy_8h.html#aaa6cf79c8db30749fdc1022ee5f673e5">EEPROM_ADDRESS</a></div><div class="ttdeci">#define EEPROM_ADDRESS</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:49</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_aab3c5b6a2db906b3e358658733802750"><div class="ttname"><a href="_r_pico_boy_8h.html#aab3c5b6a2db906b3e358658733802750">BUTTON_DOWN_PIN</a></div><div class="ttdeci">#define BUTTON_DOWN_PIN</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:42</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_ab61d0981ed42df9e18211b273d22cfcd"><div class="ttname"><a href="_r_pico_boy_8h.html#ab61d0981ed42df9e18211b273d22cfcd">BUZZER_PIN</a></div><div class="ttdeci">#define BUZZER_PIN</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:20</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_ab9824ab080c30006c1baaa0dd7e863c5"><div class="ttname"><a href="_r_pico_boy_8h.html#ab9824ab080c30006c1baaa0dd7e863c5">LED_RED_PIN</a></div><div class="ttdeci">#define LED_RED_PIN</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:23</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_accfc50415a9a8f8732a6912889c3fa11"><div class="ttname"><a href="_r_pico_boy_8h.html#accfc50415a9a8f8732a6912889c3fa11">BTN_MAX</a></div><div class="ttdeci">#define BTN_MAX</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:94</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_acda7867453dc4bd8d91710fbe4ea55a8"><div class="ttname"><a href="_r_pico_boy_8h.html#acda7867453dc4bd8d91710fbe4ea55a8">BUTTON_UP_PIN</a></div><div class="ttdeci">#define BUTTON_UP_PIN</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:36</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_ad0667700f38503d05ed5292ab92a7045"><div class="ttname"><a href="_r_pico_boy_8h.html#ad0667700f38503d05ed5292ab92a7045">LED_ANODE_PIN</a></div><div class="ttdeci">#define LED_ANODE_PIN</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:29</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_ad87de2be84c6249b3c1378a76ed7ac91"><div class="ttname"><a href="_r_pico_boy_8h.html#ad87de2be84c6249b3c1378a76ed7ac91">BTN_A</a></div><div class="ttdeci">#define BTN_A</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:80</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_ae55225024bd160dd59985cb17eb5a2ed"><div class="ttname"><a href="_r_pico_boy_8h.html#ae55225024bd160dd59985cb17eb5a2ed">BTN_UP</a></div><div class="ttdeci">#define BTN_UP</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:84</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_aeb8b29caaae1a7515c8bd9473e6eefb1"><div class="ttname"><a href="_r_pico_boy_8h.html#aeb8b29caaae1a7515c8bd9473e6eefb1">BTN_RIGHT</a></div><div class="ttdeci">#define BTN_RIGHT</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:86</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_afa43c3a8af6cdc271ec334f8fcde1d98"><div class="ttname"><a href="_r_pico_boy_8h.html#afa43c3a8af6cdc271ec334f8fcde1d98">RED_VOLTAGE</a></div><div class="ttdeci">#define RED_VOLTAGE</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:70</div></div>
+<div class="ttc" id="a_r_pico_boy_8h_html_afb7c5b0b82831d22a29823a42e751a7d"><div class="ttname"><a href="_r_pico_boy_8h.html#afb7c5b0b82831d22a29823a42e751a7d">TEXT_W_MODE</a></div><div class="ttdeci">#define TEXT_W_MODE</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:75</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html"><div class="ttname"><a href="class_r_pico_boy.html">RPicoBoy</a></div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:106</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a0135e753a93106920d8ebc170ae895a6"><div class="ttname"><a href="class_r_pico_boy.html#a0135e753a93106920d8ebc170ae895a6">RPicoBoy::getButtons</a></div><div class="ttdeci">void getButtons(bool *buttonArray)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:911</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a08aa5c64430e267dd161ea6265245348"><div class="ttname"><a href="class_r_pico_boy.html#a08aa5c64430e267dd161ea6265245348">RPicoBoy::getSoundDelay</a></div><div class="ttdeci">void getSoundDelay(int *sound_delay)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:291</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a1805feeb1295667c0c673dc2876f812c"><div class="ttname"><a href="class_r_pico_boy.html#a1805feeb1295667c0c673dc2876f812c">RPicoBoy::setCursor</a></div><div class="ttdeci">void setCursor(int16_t x, int16_t y)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:472</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a1c18ff4d7d4e09a90013748222af24c1"><div class="ttname"><a href="class_r_pico_boy.html#a1c18ff4d7d4e09a90013748222af24c1">RPicoBoy::oneSoundDelay</a></div><div class="ttdeci">void oneSoundDelay()</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:319</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a20007bac8590c2b8c70bbe0872c9a611"><div class="ttname"><a href="class_r_pico_boy.html#a20007bac8590c2b8c70bbe0872c9a611">RPicoBoy::RPicoBoy</a></div><div class="ttdeci">RPicoBoy()</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:193</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a255077dc9bbd1ee843e90dda3f279318"><div class="ttname"><a href="class_r_pico_boy.html#a255077dc9bbd1ee843e90dda3f279318">RPicoBoy::_g_pin</a></div><div class="ttdeci">int _g_pin</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:179</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a287c4dbe7e096007378efbf568e86eed"><div class="ttname"><a href="class_r_pico_boy.html#a287c4dbe7e096007378efbf568e86eed">RPicoBoy::setFpsDelay</a></div><div class="ttdeci">void setFpsDelay(int fps)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:241</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a2aefe800664cbd3188dc3f237d0a7fb0"><div class="ttname"><a href="class_r_pico_boy.html#a2aefe800664cbd3188dc3f237d0a7fb0">RPicoBoy::buttonSetup</a></div><div class="ttdeci">void buttonSetup()</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:895</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a2d27c4aa3fc671dd833b9c9854006f42"><div class="ttname"><a href="class_r_pico_boy.html#a2d27c4aa3fc671dd833b9c9854006f42">RPicoBoy::_one_sound_delay</a></div><div class="ttdeci">int _one_sound_delay</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:175</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a2ea496f6d7535f8fe2eed09701b275bd"><div class="ttname"><a href="class_r_pico_boy.html#a2ea496f6d7535f8fe2eed09701b275bd">RPicoBoy::_old_menu_select</a></div><div class="ttdeci">int _old_menu_select</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:171</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a3557043818b98c8890a1b6506b167b70"><div class="ttname"><a href="class_r_pico_boy.html#a3557043818b98c8890a1b6506b167b70">RPicoBoy::dotInversion</a></div><div class="ttdeci">void dotInversion(int16_t x, int16_t y)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:497</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a39f93ff1b0bdcca11c1ba5aa1c73d21b"><div class="ttname"><a href="class_r_pico_boy.html#a39f93ff1b0bdcca11c1ba5aa1c73d21b">RPicoBoy::writeEEPROM</a></div><div class="ttdeci">void writeEEPROM(unsigned int eeaddress, byte data)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:1037</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a3ea3b269c3eae4e2059365cef0689910"><div class="ttname"><a href="class_r_pico_boy.html#a3ea3b269c3eae4e2059365cef0689910">RPicoBoy::drawArrayImage90RotConst</a></div><div class="ttdeci">void drawArrayImage90RotConst(int16_t x, int16_t y, int w, int h, const long long unsigned int *array)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:729</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a40083ae2fe5f6e0450090bcf205c3839"><div class="ttname"><a href="class_r_pico_boy.html#a40083ae2fe5f6e0450090bcf205c3839">RPicoBoy::drawImage64bitBin</a></div><div class="ttdeci">void drawImage64bitBin(int16_t x, int16_t y, int w, int h, int s, long long unsigned int *array, long long unsigned int *mArray)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:515</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a40d6543a1174ca6d1ef2ddef5ce9a373"><div class="ttname"><a href="class_r_pico_boy.html#a40d6543a1174ca6d1ef2ddef5ce9a373">RPicoBoy::resetButton</a></div><div class="ttdeci">void resetButton()</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:946</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a41c7b9a652c0a8e3c73980848bf8342c"><div class="ttname"><a href="class_r_pico_boy.html#a41c7b9a652c0a8e3c73980848bf8342c">RPicoBoy::buzzerSetup</a></div><div class="ttdeci">void buzzerSetup()</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:996</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a425dcd281487b113a19bf2e03e830561"><div class="ttname"><a href="class_r_pico_boy.html#a425dcd281487b113a19bf2e03e830561">RPicoBoy::_old_buttons</a></div><div class="ttdeci">bool _old_buttons[BTN_MAX]</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:184</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a46baf35cb6ba2f660eb47224205dcb7f"><div class="ttname"><a href="class_r_pico_boy.html#a46baf35cb6ba2f660eb47224205dcb7f">RPicoBoy::_fps</a></div><div class="ttdeci">int _fps</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:172</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a49b6e567e8fd9c782e32c3bba449d9fe"><div class="ttname"><a href="class_r_pico_boy.html#a49b6e567e8fd9c782e32c3bba449d9fe">RPicoBoy::_draw_color</a></div><div class="ttdeci">uint16_t _draw_color</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:176</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a5934cb2953e1424a07b87ab107bc1ba7"><div class="ttname"><a href="class_r_pico_boy.html#a5934cb2953e1424a07b87ab107bc1ba7">RPicoBoy::clearDisplay</a></div><div class="ttdeci">void clearDisplay()</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:807</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a5a48f35378bf76e9b4e73cad802ad850"><div class="ttname"><a href="class_r_pico_boy.html#a5a48f35378bf76e9b4e73cad802ad850">RPicoBoy::getButton</a></div><div class="ttdeci">bool getButton(int btn_number)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:970</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a5d88fdb4a0f3378c17b4e7a2d861d940"><div class="ttname"><a href="class_r_pico_boy.html#a5d88fdb4a0f3378c17b4e7a2d861d940">RPicoBoy::setDrawColor</a></div><div class="ttdeci">void setDrawColor(uint16_t color)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:433</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a60fdc118800a8c54238794f9acfd4a4b"><div class="ttname"><a href="class_r_pico_boy.html#a60fdc118800a8c54238794f9acfd4a4b">RPicoBoy::readEEPROM</a></div><div class="ttdeci">byte readEEPROM(unsigned int eeaddress)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:1059</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a6114b59ee55a477b79e91d368efaf94c"><div class="ttname"><a href="class_r_pico_boy.html#a6114b59ee55a477b79e91d368efaf94c">RPicoBoy::_r_pin</a></div><div class="ttdeci">int _r_pin</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:178</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a6336fd57e7dc00f411daf88480ff6108"><div class="ttname"><a href="class_r_pico_boy.html#a6336fd57e7dc00f411daf88480ff6108">RPicoBoy::buzzerCall</a></div><div class="ttdeci">void buzzerCall(int freq)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:1009</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a68e784f8c5c8c0361027eb0c3f8d3bce"><div class="ttname"><a href="class_r_pico_boy.html#a68e784f8c5c8c0361027eb0c3f8d3bce">RPicoBoy::_old_micros</a></div><div class="ttdeci">unsigned long _old_micros</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:173</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a6b85b2ba7e8f6610d3fdf3f0b54763e2"><div class="ttname"><a href="class_r_pico_boy.html#a6b85b2ba7e8f6610d3fdf3f0b54763e2">RPicoBoy::drawArrayImage90Rot</a></div><div class="ttdeci">void drawArrayImage90Rot(int16_t x, int16_t y, int w, int h, long long unsigned int *array)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:695</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a6beab6e9fe577807bfb5b4a4897c4e28"><div class="ttname"><a href="class_r_pico_boy.html#a6beab6e9fe577807bfb5b4a4897c4e28">RPicoBoy::_delay_time</a></div><div class="ttdeci">unsigned int _delay_time</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:174</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a701af7cee87dd2bd95b8b486a9749ac0"><div class="ttname"><a href="class_r_pico_boy.html#a701af7cee87dd2bd95b8b486a9749ac0">RPicoBoy::setMenuSelect</a></div><div class="ttdeci">void setMenuSelect(int number)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:331</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a718a2d33f85d086abb4cc7c512fad200"><div class="ttname"><a href="class_r_pico_boy.html#a718a2d33f85d086abb4cc7c512fad200">RPicoBoy::println</a></div><div class="ttdeci">void println(String s)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:798</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a74313a4424974330c8526e19b27cccaf"><div class="ttname"><a href="class_r_pico_boy.html#a74313a4424974330c8526e19b27cccaf">RPicoBoy::ledSetup</a></div><div class="ttdeci">void ledSetup()</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:827</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a74ebe4911d2b4078042f0bc3ba113338"><div class="ttname"><a href="class_r_pico_boy.html#a74ebe4911d2b4078042f0bc3ba113338">RPicoBoy::_oled</a></div><div class="ttdeci">Adafruit_SSD1306 * _oled</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:169</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a75741452321875c4b27ee612c3a12abb"><div class="ttname"><a href="class_r_pico_boy.html#a75741452321875c4b27ee612c3a12abb">RPicoBoy::_text_size</a></div><div class="ttdeci">uint8_t _text_size</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:177</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a7690524b8b070ebcb2c33127056edef7"><div class="ttname"><a href="class_r_pico_boy.html#a7690524b8b070ebcb2c33127056edef7">RPicoBoy::ledOff</a></div><div class="ttdeci">void ledOff()</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:883</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a7b938678e45cade2010926118f5abead"><div class="ttname"><a href="class_r_pico_boy.html#a7b938678e45cade2010926118f5abead">RPicoBoy::getMenuSelect</a></div><div class="ttdeci">int getMenuSelect()</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:343</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a7d2797661b06cc5d5ca963a25a9c53eb"><div class="ttname"><a href="class_r_pico_boy.html#a7d2797661b06cc5d5ca963a25a9c53eb">RPicoBoy::drawPixel</a></div><div class="ttdeci">void drawPixel(int16_t x, int16_t y)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:485</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a7ddd3ccbd928544d707efd06e1cfb38b"><div class="ttname"><a href="class_r_pico_boy.html#a7ddd3ccbd928544d707efd06e1cfb38b">RPicoBoy::drawLine</a></div><div class="ttdeci">void drawLine(int16_t start_x, int16_t start_y, int16_t end_x, int16_t end_y)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:762</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a7fc01770170de4be19c85cd8fefc2ef8"><div class="ttname"><a href="class_r_pico_boy.html#a7fc01770170de4be19c85cd8fefc2ef8">RPicoBoy::setOneSoundDelay</a></div><div class="ttdeci">void setOneSoundDelay(int one_sound_delay)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:258</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a853b6a1ead9974886520be71b6847eae"><div class="ttname"><a href="class_r_pico_boy.html#a853b6a1ead9974886520be71b6847eae">RPicoBoy::ledOn</a></div><div class="ttdeci">void ledOn(int r, int g, int b, int value)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:856</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a88421af0ccfc92ec19d79baef4d440b6"><div class="ttname"><a href="class_r_pico_boy.html#a88421af0ccfc92ec19d79baef4d440b6">RPicoBoy::drawPixelWithMask</a></div><div class="ttdeci">void drawPixelWithMask(int16_t x, int16_t y, char bin_c, char mask_c)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:658</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a888fec53da2931b5b06e024920731fa5"><div class="ttname"><a href="class_r_pico_boy.html#a888fec53da2931b5b06e024920731fa5">RPicoBoy::init</a></div><div class="ttdeci">void init(int fps, int one_sound_delay)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:219</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a8a36d7dd86c284201b7982cbe5b6af67"><div class="ttname"><a href="class_r_pico_boy.html#a8a36d7dd86c284201b7982cbe5b6af67">RPicoBoy::buzzerCallDelay</a></div><div class="ttdeci">void buzzerCallDelay(int freq, int delay_time)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:1023</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a8d922eb27d8b7530cd2d6dae9de2642b"><div class="ttname"><a href="class_r_pico_boy.html#a8d922eb27d8b7530cd2d6dae9de2642b">RPicoBoy::isChangedMenuSelect</a></div><div class="ttdeci">bool isChangedMenuSelect()</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:354</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a937780be29a7fbc98aae686072893c54"><div class="ttname"><a href="class_r_pico_boy.html#a937780be29a7fbc98aae686072893c54">RPicoBoy::_anode_pin</a></div><div class="ttdeci">int _anode_pin</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:181</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a96fe8f4c324abe02d715e69230b89b36"><div class="ttname"><a href="class_r_pico_boy.html#a96fe8f4c324abe02d715e69230b89b36">RPicoBoy::_b_pin</a></div><div class="ttdeci">int _b_pin</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:180</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a9b2b10f23a18c6ab063ea924048fa863"><div class="ttname"><a href="class_r_pico_boy.html#a9b2b10f23a18c6ab063ea924048fa863">RPicoBoy::drawImage64bitBinExpansionConst</a></div><div class="ttdeci">void drawImage64bitBinExpansionConst(int16_t x, int16_t y, int w, int h, int s, const long long unsigned int *array, const long long unsigned int *mArray, unsigned short exp_rate)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:612</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a9b89c4115f39c27a04f59804c08407ba"><div class="ttname"><a href="class_r_pico_boy.html#a9b89c4115f39c27a04f59804c08407ba">RPicoBoy::display</a></div><div class="ttdeci">void display()</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:817</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a9ccd05e4decef86344456f1bd610277e"><div class="ttname"><a href="class_r_pico_boy.html#a9ccd05e4decef86344456f1bd610277e">RPicoBoy::startFps</a></div><div class="ttdeci">void startFps()</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:267</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_a9e32b69fc1a7a1da875359aa72072b7e"><div class="ttname"><a href="class_r_pico_boy.html#a9e32b69fc1a7a1da875359aa72072b7e">RPicoBoy::setTextSize</a></div><div class="ttdeci">void setTextSize(uint8_t size)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:444</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_aab70143e33d405d9e99b5d6423b7051b"><div class="ttname"><a href="class_r_pico_boy.html#aab70143e33d405d9e99b5d6423b7051b">RPicoBoy::getFpsDelay</a></div><div class="ttdeci">void getFpsDelay(int *fps, unsigned int *delay_time)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:279</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_abfb52d23478480336c26d4217301c2ae"><div class="ttname"><a href="class_r_pico_boy.html#abfb52d23478480336c26d4217301c2ae">RPicoBoy::_buzzer_pin</a></div><div class="ttdeci">int _buzzer_pin</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:182</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_ac0308539ec839f45be5bd3349ddf0c81"><div class="ttname"><a href="class_r_pico_boy.html#ac0308539ec839f45be5bd3349ddf0c81">RPicoBoy::oledSetup</a></div><div class="ttdeci">void oledSetup()</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:405</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_ac3845a5d34c91986f4b343daf44bdc3b"><div class="ttname"><a href="class_r_pico_boy.html#ac3845a5d34c91986f4b343daf44bdc3b">RPicoBoy::print</a></div><div class="ttdeci">void print(String s)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:787</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_ad89ed1c6927fd46c310fddb55ca6c5e6"><div class="ttname"><a href="class_r_pico_boy.html#ad89ed1c6927fd46c310fddb55ca6c5e6">RPicoBoy::drawImage64bitBinExpansion</a></div><div class="ttdeci">void drawImage64bitBinExpansion(int16_t x, int16_t y, int w, int h, int s, long long unsigned int *array, long long unsigned int *mArray, unsigned short exp_rate)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:562</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_ad9cf2981a03f6ad5e10cab34c7b87581"><div class="ttname"><a href="class_r_pico_boy.html#ad9cf2981a03f6ad5e10cab34c7b87581">RPicoBoy::_buttons</a></div><div class="ttdeci">bool _buttons[BTN_MAX]</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:183</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_adf025e9248ce516ade0b187ed149595e"><div class="ttname"><a href="class_r_pico_boy.html#adf025e9248ce516ade0b187ed149595e">RPicoBoy::updateButton</a></div><div class="ttdeci">void updateButton()</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:957</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_ae3dd7ab7a7c648de8b1618bab315115e"><div class="ttname"><a href="class_r_pico_boy.html#ae3dd7ab7a7c648de8b1618bab315115e">RPicoBoy::fillRect</a></div><div class="ttdeci">void fillRect(int16_t start_x, int16_t start_y, int16_t end_x, int16_t end_y)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:776</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_af42b7f63e4b7bc8f6c547a9db63a2108"><div class="ttname"><a href="class_r_pico_boy.html#af42b7f63e4b7bc8f6c547a9db63a2108">RPicoBoy::isCrossAllButton</a></div><div class="ttdeci">bool isCrossAllButton()</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:984</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_afbcbd5b7f225eca997e8449d0f502c19"><div class="ttname"><a href="class_r_pico_boy.html#afbcbd5b7f225eca997e8449d0f502c19">RPicoBoy::fpsDelay</a></div><div class="ttdeci">void fpsDelay()</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:300</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_afbea67461471e8587eea739c6d19d513"><div class="ttname"><a href="class_r_pico_boy.html#afbea67461471e8587eea739c6d19d513">RPicoBoy::_menu_select</a></div><div class="ttdeci">int _menu_select</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:170</div></div>
+<div class="ttc" id="aclass_r_pico_boy_html_afce089371c9ccd2c0b204e978b0921f1"><div class="ttname"><a href="class_r_pico_boy.html#afce089371c9ccd2c0b204e978b0921f1">RPicoBoy::setTextColor</a></div><div class="ttdeci">void setTextColor(int mode)</div><div class="ttdef"><b>Definition:</b> RPicoBoy.h:456</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6
+</small></address>
+</body>
+</html>
