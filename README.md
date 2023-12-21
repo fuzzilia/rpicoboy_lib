@@ -77,3 +77,15 @@ PCにArduino IDEをインストールしてください。
 ライブラリ内の関数や定数などは以下のドキュメントを参照してください。
 
 ※ここにdoxygenで作ったドキュメントURLを貼る。
+
+## LICENSE
+
+本ライセンスはLICENSEファイルを参照してください。
+- https://github.com/fuzzilia/rpicoboy_lib/blob/master/LICENSE
+
+使用している各ライブラリのライセンスは以下を参照してください。
+
+- Adafruit GFX Library
+  - https://github.com/adafruit/Adafruit-GFX-Library/blob/master/license.txt
+- Adafruit SSD1306
+  - https://github.com/adafruit/Adafruit_SSD1306/blob/master/license.txt
