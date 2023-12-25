@@ -76,7 +76,7 @@ PCにArduino IDEをインストールしてください。
 
 ライブラリ内の関数や定数などは以下のドキュメントを参照してください。
 
-※ここにdoxygenで作ったドキュメントURLを貼る。
+- https://fuzzilia.github.io/rpicoboy_lib/class_r_pico_boy.html
 
 ## LICENSE
 
